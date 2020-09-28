@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.*;
 import javax.swing.*;
 
 class GraphTest extends JFrame {
@@ -9,7 +10,12 @@ class GraphTest extends JFrame {
 		setVisible(true);
 	}
 
-	public void paint(Graphics g) {
+	public void paint(Graphics gr) {
+		Graphics2D g = (Graphics2D)gr;
+		AffineTransform at = AffineTransform.getRotateInstance(-Math.PI/4.0, 250.0, 150.0);
+		at.concatenate(new AffineTransform(0.5, 0.0, 0.0, 0.5, 100.0, 60.0));
+		g.setTransform(at);
+
 		Dimension d = getSize();
 		int dx = d.width / 20, dy = d.height / 20;
 
