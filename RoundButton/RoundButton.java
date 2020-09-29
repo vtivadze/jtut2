@@ -6,6 +6,7 @@ class FlowerButton extends Component implements MouseListener {
 
 	public FlowerButton() {
 		super();
+		enableEvents(AWTEvent.MOUSE_EVENT_MASK);
 		addMouseListener(this);
 	}
 
