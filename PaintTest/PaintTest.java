@@ -23,13 +23,15 @@ class PaintTest extends JFrame{
 
 		TexturePaint tp = new TexturePaint(bi, new Rectangle2D.Double(0.0, 0.0, 10.0, 10.0));
 		g.setPaint(tp);
-		
+
 		g.fill(new Rectangle2D.Double(50,50, 200, 200));
 		GradientPaint gp = new GradientPaint(100, 100, Color.white, 150, 150, Color.black, true);
 		g.setPaint(gp);
 		g.fill(new Ellipse2D.Double(100, 100, 200, 200));
 	}
+
 	public static void main(String[] args){
 		new PaintTest("Filling Methods");
 	}
+	
 }
